@@ -23,6 +23,7 @@ class ProjectWindow(QMainWindow):
         self.label = QLabel("Press start to begin", self)
         self.label.setAlignment(Qt.AlignCenter)
         self.start_button = QPushButton("Start", self)
+        self.start_button.setStyleSheet("QPushButton { background-color: #1C72B1; padding:20px; color: white; font-weight: bold; border-radius:12px; font-size: 18px; margin:10px;} \QPushButton:hover { background-color: #1C94E0; }")
         self.start_button.clicked.connect(self.update_plot)
 
         self.layout = QVBoxLayout()
@@ -120,6 +121,7 @@ class ProjectWindow(QMainWindow):
         self.widget = QWidget()
         self.widget.setLayout(self.layout)
         self.setCentralWidget(self.widget)
+        self.showMaximized()
     
 
     def update_plot(self):
